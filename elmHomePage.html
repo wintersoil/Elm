@@ -1,0 +1,1171 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;400;500;600;700&family=Nunito:wght@200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300&display=swap" rel="stylesheet">
+    <script>
+      $(document).ready(function(){
+  $(".menu-tab-individual").click(function(){
+    $(".menu-tab-individual").removeClass("menu-tab-individual-selected");
+     $(this).addClass("menu-tab-individual-selected");
+  });
+  $(".menu-tab-individual").click(function(){
+    $(".code-sample").css("display", "none")
+    $(".code-sample-" + $(this).attr("data-attr")).css("display", "block")
+  })
+});
+      
+    </script>
+    <style>
+      body {
+  display: grid;
+  grid-template-columns: 3fr 8fr;
+  height:100vh;
+  width: 100vw;
+  margin: 0px;
+  font-family: "Nunito";
+  background-color: rgb(13,121,247);
+  overflow: hidden;
+}
+.introduction{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 27.3%;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    background-color: rgb(23 122 236);
+    border-bottom: 1px solid rgb(53 152 255);
+    z-index: 3;
+}
+.menu-tab-individual-container-outer {
+  display:flex;
+  flex-wrap: wrap;
+  flex-basis: 100%;
+  overflow: scroll;
+}
+.menu-tab-individual-container-outer::-webkit-scrollbar {
+  display: none;
+}
+.menu-tab-individual-container-outer {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.intro-image {
+  border-radius: 50%;
+  border: 2px solid #666;
+  margin-top: 22px;
+}
+.introduction-name {
+  flex-basis: 100%;
+  margin: 15px 0px 15px 0px;
+  display:flex;
+  justify-content: center;
+}
+.menu-tab-individual-container {
+    flex-basis: 100%;
+    position: relative;
+    top: 320px;
+    z-index: 0;
+}
+.menu {
+  background-color: rgb(13,121,247);
+  font-size:30px;
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  position: relative;
+  overflow: scroll;
+}
+.menu::-webkit-scrollbar {
+  display: none;
+}
+.menu {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.menu-tab-individual{
+  padding: 10px 20px 12px 20px;
+  flex-basis: 100%;
+  border-left: 5px solid transparent;
+}
+.menu-tab-individual-number
+{
+  display: inline-block;
+}
+.menu-tab-individual:hover{
+  background-color: #f0f0f0;
+  color:  #666;
+  cursor: pointer;
+}
+.menu-tab-individual-selected {
+  background-color:#f9f8f8;
+  color: #444;
+  border-left: 5px solid #00cfff;
+  clip-path: polygon(0 0, 100% 0, 100% 30%, 97% 50%, 100% 70%, 100% 100%, 0 100%)
+}
+.menu-tab-individual-difficulty {
+  font-size: 16px;
+  color: #222;
+}
+.menu-tab-individual-language {
+  float: right;
+  color: white;
+}
+.menu-tab-individual:hover .menu-tab-individual-language{
+  color:  #666;
+}
+.menu-tab-individual-selected .menu-tab-individual-language {
+  color: #888;
+}
+.menu-tab-individual-selected .menu-tab-individual-difficulty {
+  color: #888;
+}
+.code-outer-container {
+  background-color: white;
+  overflow: hidden;
+  height: 100%;
+  display:flex;
+  align-items: flex-start;
+}
+.code-sample-code {
+    padding: 10px 20px;
+      max-height: 520px;
+    overflow: scroll;
+}
+.code-sample-code::-webkit-scrollbar {
+  display: none;
+}
+.code-sample-code {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.code-sample-menu {
+  padding: 6px 16px;
+  font-family: "Source Sans Pro";
+  font-weight: 300;
+  color: white;
+}
+.code-sample-github {
+  font-family: 'FontAwesome';
+  text-decoration: none;
+  color: white;
+  float: right;
+}
+.code-sample-expand {
+  font-family: 'FontAwesome';
+  text-decoration: none;
+  color: white;
+  float: right;
+  margin-left: 12px;
+}
+.code-sample-expand:hover {
+  color: #009fdf;
+  cursor: pointer;
+}
+.code-sample-github:hover {
+  color: #009fdf;
+  cursor: pointer;
+}
+.code-sample {
+  display: none;
+  background-color: #222;
+  color: #6fead4;
+  box-shadow: 3px 4px 5px #aaa, -1px -1px 3px #aaa;
+  border-radius: 5px;
+  margin: 20px 30px;
+  height: auto;
+  overflow: scroll;
+  font-size: 21px;
+  font-family: "Inconsolata";
+  font-weight: 400;
+  line-height: 1.5;
+}
+.code-sample::-webkit-scrollbar {
+  display: none;
+}
+.code-sample {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.code-sample-menu {
+  border-bottom: 1px solid #444;
+  margin-bottom: 10px;
+}
+.golden {
+  color: rgb(255 166 0);
+}
+.pink {
+  color: rgb(255 0 246);
+}
+.blue {
+  color: rgb(57 164 243);
+}
+    </style>
+  </head>
+  <body>
+    <div class="menu">
+      <div class="introduction-outer">
+      <div class="introduction">
+        <img class="intro-image" src="https://media-exp1.licdn.com/dms/image/C5603AQGmMoFsyxu9Bw/profile-displayphoto-shrink_200_200/0?e=1610582400&v=beta&t=pVbsNNaJetcApt6GXyGsrckcfx93mcpu_CAv36FEW20"/>
+        <div class="introduction-name">
+          Ali Usmani
+        </div>
+      </div>
+      </div>
+      <div class="menu-tab-individual-container-outer">
+      <div class="menu-tab-individual-container">
+        
+      <div class="menu-tab-individual menu-tab-individual-selected" data-attr=1>
+        <div class="menu-tab-individual-number">
+          1.
+        </div>
+        Hello World
+        <div class="menu-tab-individual-difficulty">
+          Easy
+          <span class="menu-tab-individual-language">Elm</span>
+        </div>
+      </div>
+      <div class="menu-tab-individual" data-attr=2>
+        <div class="menu-tab-individual-number">
+          2.
+        </div>
+        Two Fer
+        <div class="menu-tab-individual-difficulty">
+          Easy
+          <span class="menu-tab-individual-language">Elm</span>
+        </div>
+      </div>
+      <div class="menu-tab-individual" data-attr=3>
+        <div class="menu-tab-individual-number">
+          3.
+        </div>
+        Bob
+        <div class="menu-tab-individual-difficulty">
+          Easy
+          <span class="menu-tab-individual-language">Elm</span>
+        </div>
+      </div>
+      <div class="menu-tab-individual" data-attr=4>
+        <div class="menu-tab-individual-number">
+          4.
+        </div>
+        Difference of Squares
+        <div class="menu-tab-individual-difficulty">
+          Easy
+          <span class="menu-tab-individual-language">Elm</span>
+        </div>
+      </div>
+      <div class="menu-tab-individual" data-attr=5>
+        <div class="menu-tab-individual-number">
+          5.
+        </div>
+        Gigasecond
+        <div class="menu-tab-individual-difficulty">
+          Easy
+          <span class="menu-tab-individual-language">Elm</span>
+        </div>
+      </div>
+      <div class="menu-tab-individual" data-attr=6>
+        <div class="menu-tab-individual-number">
+          6.
+        </div>
+        Leap
+        <div class="menu-tab-individual-difficulty">
+          Easy
+          <span class="menu-tab-individual-language">Elm</span>
+        </div>
+      </div>
+        <div class="menu-tab-individual" data-attr=7>
+          <div class="menu-tab-individual-number">
+          7.
+        </div>
+        RNA Transcription
+        <div class="menu-tab-individual-difficulty">
+          Easy
+          <span class="menu-tab-individual-language">Elm</span>
+        </div>
+      </div>
+        <div class="menu-tab-individual" data-attr=8>
+          <div class="menu-tab-individual-number">
+          8.
+        </div>
+        Space Age
+        <div class="menu-tab-individual-difficulty">
+          Easy
+          <span class="menu-tab-individual-language">Elm</span>
+        </div>
+      </div>
+        <div class="menu-tab-individual" data-attr=9>
+          <div class="menu-tab-individual-number">
+          9.
+        </div>
+        Sum of Multiples
+        <div class="menu-tab-individual-difficulty">
+          Easy
+          <span class="menu-tab-individual-language">Elm</span>
+        </div>
+      </div>
+        <div class="menu-tab-individual" data-attr=10>
+          <div class="menu-tab-individual-number">
+          10.
+        </div>
+        Accumulate
+        <div class="menu-tab-individual-difficulty">
+          Easy
+          <span class="menu-tab-individual-language">Elm</span>
+        </div>
+      </div>
+        <div class="menu-tab-individual" data-attr=11>
+          <div class="menu-tab-individual-number">
+          11.
+        </div>
+        Collatz Conjecture
+        <div class="menu-tab-individual-difficulty">
+          Easy
+          <span class="menu-tab-individual-language">Elm</span>
+        </div>
+      </div>
+        <div class="menu-tab-individual" data-attr=12>
+          <div class="menu-tab-individual-number">
+          12.
+        </div>
+        ETL
+        <div class="menu-tab-individual-difficulty">
+          Easy
+          <span class="menu-tab-individual-language">Elm</span>
+        </div>
+      </div>
+        <div class="menu-tab-individual" data-attr=13>
+          <div class="menu-tab-individual-number">
+          13.
+        </div>
+        Grade School
+        <div class="menu-tab-individual-difficulty">
+          Easy
+          <span class="menu-tab-individual-language">Elm</span>
+        </div>
+      </div>
+        <div class="menu-tab-individual" data-attr=14>
+          <div class="menu-tab-individual-number">
+          14.
+        </div>
+        Grains
+        <div class="menu-tab-individual-difficulty">
+          Easy
+          <span class="menu-tab-individual-language">Elm</span>
+        </div>
+      </div>
+        <div class="menu-tab-individual" data-attr=15>
+          <div class="menu-tab-individual-number">
+          15.
+        </div>
+        Hamming
+        <div class="menu-tab-individual-difficulty">
+          Easy
+          <span class="menu-tab-individual-language">Elm</span>
+        </div>
+      </div>
+        <div class="menu-tab-individual" data-attr=16>
+          <div class="menu-tab-individual-number">
+          16.
+        </div>
+        Nucleotide Count
+        <div class="menu-tab-individual-difficulty">
+          Easy
+          <span class="menu-tab-individual-language">Elm</span>
+        </div>
+      </div>
+        <div class="menu-tab-individual" data-attr=17>
+          <div class="menu-tab-individual-number">
+          17.
+        </div>
+        Pangram
+        <div class="menu-tab-individual-difficulty">
+          Easy
+          <span class="menu-tab-individual-language">Elm</span>
+        </div>
+      </div>
+        <div class="menu-tab-individual" data-attr=18>
+          <div class="menu-tab-individual-number">
+          18.
+        </div>
+        Raindrops
+        <div class="menu-tab-individual-difficulty">
+          Easy
+          <span class="menu-tab-individual-language">Elm</span>
+        </div>
+      </div>
+      </div>
+      </div>
+    </div>
+    <div class="code-outer-container">
+      <div class="code-sample-1 code-sample">
+        <div class="code-sample-menu">
+         Hello World
+          <a href="https://exercism.io/tracks/elm/exercises/hello-world/solutions/144f6d289c3143de8cae8ec9dfbd31ce" target="_blank">
+          <span class="code-sample-expand">
+              <i class="fas fa-expand"></i>
+            </span>
+          </a>
+          <a href="https://github.com/wintersoil/Elm/blob/main/HelloWorld.elm" target="_blank">
+          <span class="code-sample-github">
+            <i class="fab fa-github"></i>
+          </span>
+          </a>
+        </div>
+        <div class="code-sample-code">
+        <span class="golden">module</span> <span class="blue">HelloWorld</span> <span class="golden">exposing</span> (<span class="pink">helloWorld</span>)<br>
+
+        <span class="pink">helloWorld</span> <span class="golden">: String</span><br>
+        <span class="pink">helloWorld</span> <span class="golden">=</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;"Hello, World!"<br>
+        </div>
+      </div>
+      
+      
+      <div class="code-sample-2 code-sample">
+        <div class="code-sample-menu">
+         Two Fer
+          <a href="https://exercism.io/tracks/elm/exercises/two-fer/solutions/9c56583da5bc40caaf643ae12fa4633c" target="_blank">
+          <span class="code-sample-expand">
+              <i class="fas fa-expand"></i>
+            </span>
+          </a>
+          <a href="https://github.com/wintersoil/Elm/blob/main/TwoFer1.elm" target="_blank">
+          <span class="code-sample-github">
+            <i class="fab fa-github"></i>
+          </span>
+          </a>
+        </div>
+        <div class="code-sample-code">
+        <span class="golden">module</span> <span class="blue">TwoFer</span> <span class="golden">exposing</span> (<span class="pink">twoFer</span>)<br>
+
+
+        <span class="pink">twoFer:</span> <span class="golden">Maybe String -> String</span><br>
+        <span class="pink">twoFer</span> name =<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"One for " </span> <span class="golden">++</span> <span class="blue">Maybe</span>.withDefault "you" name </span> <span class="golden">++</span> ", one for me."<br>
+    </div>
+      </div>
+  
+  <div class="code-sample-3 code-sample">
+        <div class="code-sample-menu">
+         Bob
+          <a href="https://exercism.io/tracks/elm/exercises/bob/solutions/7af37e89117440b98e834cdf1779b345" target="_blank">
+          <span class="code-sample-expand">
+              <i class="fas fa-expand"></i>
+            </span>
+          </a>
+          <a href="https://github.com/wintersoil/Elm/blob/main/Bob1.elm" target="_blank">
+          <span class="code-sample-github">
+            <i class="fab fa-github"></i>
+          </span>
+          </a>
+        </div>
+        <div class="code-sample-code">
+          <span class="golden">module</span> <span class="blue">Bob</span> <span class="golden">exposing</span> (<span class="pink">hey</span>)<br>
+          <span class="golden">import</span> <span class="blue">Html</span> <span class="golden">as</span> <span class="blue">Html</span> <span class="golden">exposing</span> (<span class="golden">Html</span>)<br>
+
+
+          <span class="pink">hey</span> <span class="golden">: String -> String</span><br>
+          <span class="pink">hey</span> remark =<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if(remark <span class="golden">==</span> <span class="blue">String</span>.toUpper remark && <span class="blue">String</span>.contains "?" remark <span class="golden">&&</span> <span class="blue">String</span>.any <span class="blue">Char</span>.isAlpha remark <span class="golden">==</span> True) <span class="golden">then</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Calm down, I know what I'm doing!"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="golden">else</span> if(<span class="blue">String</span>.endsWith "?" (<span class="blue">String</span>.trim remark) <span class="golden">&&</span> <span class="blue">String</span>.length remark <span class="golden">></span> 1) <span class="golden">then</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Sure."<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="golden">else</span> if(remark <span class="golden">==</span> <span class="blue">String</span>.toUpper remark <span class="golden">&&</span> <span class="blue">String</span>.any <span class="blue">Char</span>.isAlpha remark <span class="golden">==</span> True) <span class="golden">then</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Whoa, chill out!"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="golden">else</span> if(remark <span class="golden">==</span> "Bob" || <span class="blue">String</span>.trim remark <span class="golden">==</span> "") then<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Fine. Be that way!"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;else<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Whatever."<br>
+
+          <span class="pink">main</span> =<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">Html</span>.text (hey "Bob amazing")<br>
+    </div>
+      </div>
+  
+ <div class="code-sample-4 code-sample">
+        <div class="code-sample-menu">
+         Difference of Squares
+          <a href="https://exercism.io/tracks/elm/exercises/difference-of-squares/solutions/70e09e0fa80a428cae2ff369d58f53bd" target="_blank">
+          <span class="code-sample-expand">
+              <i class="fas fa-expand"></i>
+            </span>
+          </a>
+          <a href="https://github.com/wintersoil/Elm/blob/main/DifferenceOfSquares.elm" target="_blank">
+          <span class="code-sample-github">
+            <i class="fab fa-github"></i>
+          </span>
+          </a>
+        </div>
+        <div class="code-sample-code">
+          <span class="golden">module</span> <span class="blue">DifferenceOfSquares</span> <span class="golden">exposing</span> (<span class="pink">difference</span>, <span class="pink">squareOfSum</span>, <span class="pink">sumOfSquares</span>)<br>
+          <span class="golden">import</span> <span class="blue">Html</span><br>
+
+          <span class="pink">squareOfSum</span> : <span class="golden">Int -> Int</span><br>
+          <span class="pink">squareOfSum</span> n = <span class="blue">List</span>.sum (<span class="blue">List</span>.range <span class="blue">1</span> n) <span class="golden">*</span> <span class="blue">List</span>.sum (<span class="blue">List</span>.range <span class="blue">1</span> n)<br>
+
+
+          <span class="pink">sumOfSquares</span> : <span class="golden">Int -> Int</span><br>
+          <span class="pink">sumOfSquares</span> n = <span class="blue">List</span>.sum (<span class="blue">List</span>.map accumulateSquare (<span class="blue">List</span>.range <span class="blue">1</span> n))<br>
+
+          <span class="pink">accumulateSquare</span> : <span class="golden">Int -> Int</span><br>
+          <span class="pink">accumulateSquare</span> b =<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;( b <span class="golden">*</span> b )<br>
+
+          <span class="pink">difference</span> : <span class="golden">Int -> Int</span><br>
+          <span class="pink">difference</span> n =<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;squareOfSum(n) <span class="golden">-</span> sumOfSquares(n)<br>
+
+          <span class="pink">main</span> =<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">Html</span>.text (<span class="blue">String</span>.fromInt (difference <span class="blue">5</span>))
+        </div>
+      </div>
+  
+  <div class="code-sample-5 code-sample">
+        <div class="code-sample-menu">
+         Gigasecond
+          <a href="https://exercism.io/tracks/elm/exercises/gigasecond/solutions/d7b7591e46ee48f9a877bfac7727a306" target="_blank">
+          <span class="code-sample-expand">
+              <i class="fas fa-expand"></i>
+            </span>
+          </a>
+          <a href="https://github.com/wintersoil/Elm/blob/main/Gigasecond.elm" target="_blank">
+          <span class="code-sample-github">
+            <i class="fab fa-github"></i>
+          </span>
+          </a>
+        </div>
+        <div class="code-sample-code">
+          <span class="golden">module</span> Gigasecond <span class="golden">exposing</span> (<span class="pink">add</span>)<br>
+
+          <span class="golden">import</span> <span class="blue">Time</span><br>
+          <span class="golden">import</span> <span class="blue">Html</span><br>
+
+
+          <span class="pink">add</span> : <span class="golden"><span class="blue">Time</span>.Posix -> <span class="blue">Time</span>.Posix</span><br>
+          <span class="pink">add</span> timestamp =<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">Time</span>.millisToPosix (<span class="blue">Time</span>.posixToMillis timestamp + <span class="blue">1000000000000</span>)<br>
+
+          <span class="pink">p</span>: <span class="golden">Time.Posix</span><br>
+          <span class="pink">p</span> = <span class="blue">Time</span>.millisToPosix(<span class="blue">1604766553000</span>)<br>
+
+main =<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">Html</span>.text ( (<span class="blue">String</span>.fromInt (<span class="blue">Time</span>.toYear <span class="blue">Time</span>.utc (add (p))))<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="golden">++</span> " / " <span class="golden">++</span> (<span class="blue">String</span>.fromInt (<span class="blue">Time</span>.toDay <span class="blue">Time</span>.utc (add (p))))<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="golden">++</span> "     " <span class="golden">++</span> (<span class="blue">String</span>.fromInt (<span class="blue">Time</span>.toHour <span class="blue">Time</span>.utc (add (p))))<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="golden">++</span> ":" <span class="golden">++</span> (<span class="blue">String</span>.fromInt (<span class="blue">Time</span>.toMinute <span class="blue">Time</span>.utc (add (p))))<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="golden">++</span> ":" <span class="golden">++</span> (<span class="blue">String</span>.fromInt (<span class="blue">Time</span>.toSecond <span class="blue">Time</span>.utc (add (p)))))<br>
+        </div>
+      </div>
+  
+  <div class="code-sample-6 code-sample">
+        <div class="code-sample-menu">
+         Leap
+          <a href="https://exercism.io/tracks/elm/exercises/leap/solutions/a9f097b0792c4fcf9b78423733910a32" target="_blank">
+          <span class="code-sample-expand">
+              <i class="fas fa-expand"></i>
+            </span>
+          </a>
+          <a href="https://github.com/wintersoil/Elm/blob/main/Leap.elm" target="_blank">
+          <span class="code-sample-github">
+            <i class="fab fa-github"></i>
+          </span>
+          </a>
+        </div>
+        <div class="code-sample-code">
+          <span class="golden">module</span> <span class="blue">Leap</span> <span class="golden">exposing</span> (<span class="pink">isLeapYear</span>)<br>
+          <span class="golden">import</span> <span class="blue">Html</span><br>
+
+          <span class="pink">isLeapYear</span> <span class="golden">: Int -> Bool</span><br>
+          <span class="pink">isLeapYear</span> year =<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="golden">if</span> (modBy <span class="blue">400</span> year == <span class="blue">0</span>) <span class="golden">then</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;True<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="golden">else if</span> (modBy <span class="blue">100</span> year == <span class="blue">0</span>) <span class="golden">then</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;False<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="golden">else if</span> (modBy <span class="blue">4</span> year == <span class="blue">0</span>) <span class="golden">then</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;True<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="golden">else</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;False<br>
+
+          <span class="pink">main</span> = <span class="blue">Html</span>.text (<span class="golden">if</span> (isLeapYear <span class="blue">2104</span>)<br> <span class="golden">then</span> "Yes" <span class="golden">else</span> "No")<br>
+        </div>
+      </div>
+  
+  
+  <div class="code-sample-7 code-sample">
+        <div class="code-sample-menu">
+         RNA Transcription
+          <a href="https://exercism.io/tracks/elm/exercises/rna-transcription/solutions/6e0b6383fb794af7964dac1ca0f39639" target="_blank">
+          <span class="code-sample-expand">
+              <i class="fas fa-expand"></i>
+            </span>
+          </a>
+          <a href="https://github.com/wintersoil/Elm/blob/main/RNATranscription.elm" target="_blank">
+          <span class="code-sample-github">
+            <i class="fab fa-github"></i>
+          </span>
+          </a>
+        </div>
+        <div class="code-sample-code">
+          <span class="golden">module</span> <span class="blue">RNATranscription</span> <span class="golden">exposing</span> (<span class="pink">toRNA</span>)<br>
+          <span class="golden">import</span> <span class="blue">Html</span><br>
+          <span class="golden">import</span> <span class="blue">Dict</span> <span class="golden">exposing</span> (<span class="golden">Dict</span>)<br>
+          <span class="golden">import</span> <span class="blue">List</span><br><br>
+
+
+
+          <span class="pink">hm</span>: <span class="golden">Dict String String</span><br>
+          <span class="pink">hm</span> = <span class="blue">Dict</span>.fromList<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;[("G", "C"),<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;("C", "G"),<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;("T", "A"),<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;("A", "U")<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;]<br><br>
+
+          <span class="pink">complement</span>: <span class="golden">String -> String</span><br>
+          <span class="pink">complement</span> a = <span class="blue">Maybe</span>.withDefault "Error"<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;(<span class="blue">Dict</span>.get a hm)<br><br>
+
+          <span class="pink">toRNA</span> : <span class="golden">String -> Result String String</span><br>
+          <span class="pink">toRNA</span> dna =<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;<span class="golden">if</span> (<span class="blue">List</span>.member "Error" (<span class="blue">List</span>.map complement (String.split "" dna))) <span class="golden">then</span><br>
+ &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">Err</span> "Error Invalid input"<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;<span class="golden">else</span><br>
+ &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">Ok</span> (<span class="blue">String</span>.join "" (<span class="blue">List</span>.map complement (<span class="blue">String</span>.split "" dna)))<br><br>
+
+          main = <span class="blue">Html</span>.text (<span class="blue">Result</span>.withDefault "Error Invalid input" (toRNA "ACGTGGTCTTAA"))<br>
+        </div>
+      </div>
+  
+  <div class="code-sample-8 code-sample">
+        <div class="code-sample-menu">
+         Space Age
+          <a href="https://exercism.io/tracks/elm/exercises/space-age/solutions/a9a077e849c048428be74cb0d6f6e29f" target="_blank">
+          <span class="code-sample-expand">
+              <i class="fas fa-expand"></i>
+            </span>
+          </a>
+          <a href="https://github.com/wintersoil/Elm/blob/main/SpaceAge.elm" target="_blank">
+          <span class="code-sample-github">
+            <i class="fab fa-github"></i>
+          </span>
+          </a>
+        </div>
+        <div class="code-sample-code">
+          <span class="golden">module</span> <span class="blue">SpaceAge</span> <span class="golden">exposing</span> (<span class="golden">Planet</span>(..), <span class="pink">ageOn</span>)<br>
+          <span class="golden">import</span> <span class="blue">Dict</span> <span class="golden">exposing</span>(<span class="golden">Dict</span>)<br>
+          <span class="golden">import</span> <span class="blue">Html</span><br><br>
+
+
+
+          <span class="golden">type</span> <span class="blue">Planet</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= <span class="blue">Mercury</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| <span class="blue">Venus</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| <span class="blue">Earth</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| <span class="blue">Mars</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| <span class="blue">Jupiter</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| <span class="blue">Saturn</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| <span class="blue">Uranus</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| <span class="blue">Neptune</span><br><br>
+
+
+          <span class="pink">timeRel</span>: <span class="golden">Dict String Float</span><br>
+          <span class="pink">timeRel</span> = <br>
+&nbsp;&nbsp;&nbsp;&nbsp;Dict.fromList<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;("Mercury", (<span class="blue">0.2408467</span> <span class="golden">*</span> <span class="blue">31557600</span>)),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;("Venus", (<span class="blue">0.61519726</span> <span class="golden">*</span> <span class="blue">31557600</span>)),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;("Earth", (<span class="blue">1.0</span> <span class="golden">*</span> <span class="blue">31557600</span>)),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;("Mars", (<span class="blue">1.8808158</span> <span class="golden">*</span> <span class="blue">31557600</span>)),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;("Jupiter", (<span class="blue">11.862615</span> <span class="golden">*</span> <span class="blue">31557600</span>)),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;("Saturn", (<span class="blue">29.447498</span> <span class="golden">*</span> <span class="blue">31557600</span>)),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;("Uranus", (<span class="blue">84.016846</span> <span class="golden">*</span> <span class="blue">31557600</span>)),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;("Neptune", (<span class="blue">164.79132</span> <span class="golden">*</span> <span class="blue">31557600</span>))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;]<br><br>
+
+
+
+          <span class="pink">pl</span> : <span class="golden">Planet -> String</span><br>
+          <span class="pink">pl</span> planet =<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="golden">case</span> planet <span class="golden">of</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">Mercury</span> <span class="golden">-></span> "Mercury"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">Venus</span> <span class="golden">-></span> "Venus"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">Earth</span> <span class="golden">-></span> "Earth"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">Mars</span> <span class="golden">-></span> "Mars"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">Jupiter</span> <span class="golden">-></span> "Jupiter"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">Saturn</span> <span class="golden">-></span> "Saturn"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">Uranus</span> <span class="golden">-></span> "Uranus"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">Neptune</span> <span class="golden">-></span> "Neptune"<br>
+
+          <span class="pink">ageOn</span> : <span class="golden">Planet -> Float -> Float</span><br>
+          <span class="pink">ageOn</span> planet seconds = <br>
+&nbsp;&nbsp;&nbsp;&nbsp;(seconds / Maybe.withDefault <span class="blue">1.0</span> (<span class="blue">Dict</span>.get (pl planet) timeRel))<br><br>
+  
+  
+          <span class="pink">main</span> = <span class="blue">Html</span>.text (<span class="blue">String</span>.fromFloat (ageOn <span class="blue">Earth</span> <span class="blue">1000000000</span>))<br>
+        </div>
+      </div>
+  
+  <div class="code-sample-9 code-sample">
+        <div class="code-sample-menu">
+         Sum of Multiples
+          <a href="https://exercism.io/tracks/elm/exercises/sum-of-multiples/solutions/27b712dd14df4235aae6fbbbf4ce9ff6" target="_blank">
+          <span class="code-sample-expand">
+              <i class="fas fa-expand"></i>
+            </span>
+          </a>
+          <a href="https://github.com/wintersoil/Elm/blob/main/SumOfMultiples.elm" target="_blank">
+          <span class="code-sample-github">
+            <i class="fab fa-github"></i>
+          </span>
+          </a>
+        </div>
+        <div class="code-sample-code">
+          <span class="golden">module</span> <span class="blue">SumOfMultiples</span> <span class="golden">exposing</span> (<span class="pink">sumOfMultiples</span>)<br>
+          <span class="golden">import</span> <span class="blue">Html</span><br>
+          <span class="golden">import</span> Set <span class="golden">exposing</span>(<span class="golden"><span class="blue">Set</span></span>)<br><br>
+
+          <span class="pink">verifyLimit</span> : <span class="golden">Int -> Int -> Int -> Bool</span><br>
+          <span class="pink">verifyLimit</span> limit ptr d=<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if(d <span class="golden">*</span> ptr &lt limit) <span class="golden">then</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">True</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="golden">else</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">False</span><br><br>
+
+          <span class="pink">recursingLimitChecker</span> : <span class="golden">List Int -> Int -> Int -> Int -> List Int</span><br>
+<span class="pink">recursingLimitChecker</span> appending limit ptr d=<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="golden">if</span> (verifyLimit limit ptr d) <span class="golden">then</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;recursingLimitChecker (<span class="blue">List</span>.concat [[(d*ptr)], appending]) limit (ptr+<span class="blue">1</span>) d<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="golden">else</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;appending<br><br>
+
+          <span class="pink">sumOfMultiples2</span> : <span class="golden">List Int -> Int -> Int -> List Int -> List Int</span><br>
+          <span class="pink">sumOfMultiples2 </span> divisors limit ptr appending =<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">List</span>.foldr (++) <span class="blue">[]</span> (<span class="blue">List</span>.map (recursingLimitChecker appending limit ptr ) divisors)<br><br>
+
+          <span class="pink">sumOfMultiples</span> : <span class="golden">List Int -> Int -> Int</span><br>
+          <span class="pink">sumOfMultiples</span> divisors limit = <span class="blue">List</span>.sum (<span class="blue">Set</span>.toList (<span class="blue">Set</span>.fromList(sumOfMultiples2 divisors limit 1 <span class="blue">[]</span>)))<br><br>
+
+          <span class="pink">main</span> = <span class="blue">Html</span>.text(<span class="blue">String</span>.fromInt (sumOfMultiples [ <span class="blue">43</span>, <span class="blue">47</span> ] <span class="blue">10000</span>))<br>
+        </div>
+      </div>
+  
+  
+  <div class="code-sample-10 code-sample">
+        <div class="code-sample-menu">
+         Accumulate
+          <a href="https://exercism.io/tracks/elm/exercises/accumulate/solutions/31476a47f0fe40d39275e7ba902e0b64" target="_blank">
+          <span class="code-sample-expand">
+              <i class="fas fa-expand"></i>
+            </span>
+          </a>
+          <a href="https://github.com/wintersoil/Elm/blob/main/Accumulate.elm" target="_blank">
+          <span class="code-sample-github">
+            <i class="fab fa-github"></i>
+          </span>
+          </a>
+        </div>
+        <div class="code-sample-code">
+          <span class="golden">module</span> <span class="blue">Accumulate</span> <span class="golden">exposing</span> (<span class="pink">accumulate</span>)<br>
+          <span class="golden">import</span> <span class="blue">Html</span><br><br>
+
+          <span class="pink">accumulate</span> : (a <span class="golden">-></span> b) <span class="golden">-></span> <span class="golden">List</span> a <span class="golden">-></span> <span class="golden">List</span> b<br>
+          <span class="pink">accumulate</span> func input =<br>
+&nbsp;&nbsp;&nbsp;&nbsp;List.map func input<br><br>
+
+          <span class="pink">main</span> = <span class="blue">Html</span>.text (<span class="blue">String</span>.join ", " (accumulate <span class="blue">String</span>.toUpper [ "hello", "world" ]))<br>
+        </div>
+      </div>
+  
+  
+  <div class="code-sample-11 code-sample">
+        <div class="code-sample-menu">
+         Collatz Conjecture
+          <a href="https://exercism.io/tracks/elm/exercises/collatz-conjecture/solutions/f3a62f85e57c4531a8a2f5a5e65ad2ef" target="_blank">
+          <span class="code-sample-expand">
+              <i class="fas fa-expand"></i>
+            </span>
+          </a>
+          <a href="https://github.com/wintersoil/Elm/blob/main/CollatzConjecture.elm" target="_blank">
+          <span class="code-sample-github">
+            <i class="fab fa-github"></i>
+          </span>
+          </a>
+        </div>
+        <div class="code-sample-code">
+
+          <span class="golden">module</span> <span class="blue">CollatzConjecture</span> <span class="golden">exposing</span> (<span class="pink">collatz</span>)<br>
+          <span class="golden">import</span> <span class="blue">Html</span><br><br>
+
+          <span class="pink">callReducer</span> : <span class="golden">Int -> Int -> Int</span><br>
+          <span class="pink">callReducer</span> start counter =<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="golden">if</span>(start <span class="golden">==</span> <span class="blue">1</span>) <span class="golden">then</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;counter<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="golden">else if</span> (modBy <span class="blue">2</span> start <span class="golden">==</span> <span class="blue">0</span>) <span class="golden">then</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;callReducer (start <span class="golden">//</span> <span class="blue">2</span>) (counter + <span class="blue">1</span>)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="golden">else</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;callReducer ((start <span class="golden">*</span> <span class="blue">3</span>) <span class="golden">+</span> <span class="blue">1</span>) (counter <span class="golden">+</span> <span class="blue">1</span>)<br><br>
+
+          <span class="pink">collatz</span> : <span class="golden">Int -> Result String Int</span><br>
+          <span class="pink">collatz</span> start =<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if(start <span class="golden">&lt=</span> <span class="blue">0</span>) <span class="golden">then</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">Result.Err</span> "Only positive numbers are allowed"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="golden">else</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">Result.Ok</span> (callReducer start 0)<br><br>
+
+          <span class="pink">main</span> = <span class="blue">Html</span>.text (<span class="blue">String</span>.fromInt (<span class="blue">Result</span>.withDefault <span class="blue">0</span> (collatz <span class="blue">1000000</span>)) )<br>
+                 
+        </div>
+      </div>
+  
+  <div class="code-sample-12 code-sample">
+        <div class="code-sample-menu">
+         ETL
+          <a href="https://exercism.io/tracks/elm/exercises/etl/solutions/41289f6e3e3c4e89803939dfe7a3c8bb" target="_blank">
+          <span class="code-sample-expand">
+              <i class="fas fa-expand"></i>
+            </span>
+          </a>
+          <a href="https://github.com/wintersoil/Elm/blob/main/Etl.elm" target="_blank">
+          <span class="code-sample-github">
+            <i class="fab fa-github"></i>
+          </span>
+          </a>
+        </div>
+        <div class="code-sample-code">
+        
+          <span class="golden">module</span> <span class="blue">Etl</span> <span class="golden">exposing</span> (<span class="pink">transform</span>)<br>
+
+          <span class="golden">import</span> <span class="blue">Dict</span> <span class="golden">exposing</span> (<span class="golden">Dict</span>)<br><br>
+
+          <span class="pink">addInDict</span>: <span class="golden">Int -> Dict String Int -> String -> Dict String Int</span><br>
+          <span class="pink">addInDict</span> d dt s=<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">Dict</span>.insert (<span class="blue">String</span>.toLower s) d dt<br><br>
+
+          <span class="pink">writeScore</span>: <span class="golden">List String -> Int -> Dict String Int -> Int -> Dict Int (List String) -> Dict String Int</span><br>
+          <span class="pink">writeScore</span> listOfString d dt ptr input=<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="golden">if</span> (ptr <span class="golden">&lt=</span> (<span class="blue">List</span>.length listOfString) - <span class="blue">1</span>) <span class="golden">then</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;addInDict d (writeScore (<span class="blue">Maybe</span>.withDefault <span class="blue">[]</span> (<span class="blue">Dict</span>.get d input)) d dt (ptr+<span class="blue">1</span>) input) ( <span class="blue">Maybe</span>.withDefault "A" (<span class="blue">List</span>.head (<span class="blue">List</span>.drop ptr listOfString)))<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="golden">else</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dt<br><br>
+
+
+          <span class="pink">figureOutListString</span>: <span class="golden">Dict Int (List String) -> Dict String Int -> Int -> Dict String Int</span><br>
+          <span class="pink">figureOutListString</span> input dt d=<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;writeScore (<span class="blue">Maybe</span>.withDefault <span class="blue">[]</span> (<span class="blue">Dict</span>.get d input)) d dt <span class="blue">0</span> input<br><br>
+
+          <span class="pink">recursiveFunction</span>: <span class="golden">List Int -> Int -> Dict Int (List String) -> Dict String Int</span><br>
+          <span class="pink">recursiveFunction</span>  listInts ptr input=<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="golden">if</span> (ptr <span class="golden">&lt=</span> (<span class="blue">List</span>.length listInts) - <span class="blue">1</span>) <span class="golden">then</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;figureOutListString input (recursiveFunction (<span class="blue">Dict</span>.keys input) (ptr+1) input) (<span class="blue">Maybe</span>.withDefault <span class="blue">0</span> (<span class="blue">List</span>.head (<span class="blue">List</span>.drop ptr listInts)))<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="golden">else</span> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;figureOutListString input <span class="blue">Dict</span>.empty (<span class="blue">Maybe</span>.withDefault <span class="blue">0</span> (<span class="blue">List</span>.head (<span class="blue">List</span>.drop ptr listInts)))<br><br>
+
+          <span class="pink">transform</span> : <span class="golden">Dict Int (List String) -> Dict String Int</span><br>
+          <span class="pink">transform</span> input =<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;recursiveFunction (<span class="blue">Dict</span>.keys input) <span class="blue">0</span> input<br>
+
+        </div>
+      </div>
+  
+  
+  <div class="code-sample-13 code-sample">
+        <div class="code-sample-menu">
+         Grade School
+          <a href="https://exercism.io/tracks/elm/exercises/grade-school/solutions/8efc945e8d2e4c708cb7c2a726557f11" target="_blank">
+          <span class="code-sample-expand">
+              <i class="fas fa-expand"></i>
+            </span>
+          </a>
+          <a href="https://github.com/wintersoil/Elm/blob/main/GradeSchool.elm" target="_blank">
+          <span class="code-sample-github">
+            <i class="fab fa-github"></i>
+          </span>
+          </a>
+        </div>
+        <div class="code-sample-code">
+        
+          <span class="golden">module</span> <span class="blue">GradeSchool</span> <span class="golden">exposing</span> (<span class="pink">addStudent, allStudents, empty, studentsInGrade</span>)<br>
+
+          <span class="golden">import</span> <span class="blue">Dict</span> <span class="golden">exposing</span> (<span class="golden">Dict</span>)<br><br>
+
+
+          <span class="golden">type alias</span> <span class="blue">Grade</span> =<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">Int</span><br>
+
+
+          <span class="golden">type alias</span> <span class="blue">Student</span> =<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">String</span><br>
+
+
+          <span class="golden">type alias</span> <span class="blue">School</span> =<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">Dict Grade</span> (<span class="blue">List Student</span>)<br><br>
+
+
+          <span class="pink">empty</span> : <span class="golden">School</span><br>
+          <span class="pink">empty</span> =<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">Dict</span>.empty<br><br>
+
+
+          <span class="pink">addStudent</span> : <span class="golden">Grade -> Student -> School -> School</span><br>
+          <span class="pink">addStudent</span> grade student school =<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">Dict</span>.insert grade (student :: <span class="blue">Maybe</span>.withDefault <span class="blue">[]</span> (<span class="blue">Dict</span>.get grade school))  school<br><br>
+
+
+          <span class="pink">studentsInGrade</span> : <span class="golden">Grade -> School -> List Student</span><br>
+          <span class="pink">studentsInGrade</span> grade school =<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">List</span>.sort (<span class="blue">Maybe</span>.withDefault <span class="blue">[]</span> (<span class="blue">Dict</span>.get grade school))<br><br>
+
+          <span class="pink">figureGrade</span> : <span class="golden">List Grade -> Int -> Grade</span><br>
+          <span class="pink">figureGrade</span> ls i=<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">Maybe</span>.withDefault <span class="blue">0</span> (<span class="blue">List</span>.head (<span class="blue">List</span>.drop (i) ls))<br><br>
+
+          <span class="pink">allStudents</span> : <span class="golden">School -> List ( Grade, List Student )</span><br>
+          <span class="pink">allStudents</span> school =<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">List</span>.indexedMap (\i x -> ((figureGrade (<span class="blue">Dict</span>.keys school) i), (studentsInGrade (figureGrade (<span class="blue">Dict</span>.keys school) i) school))) (<span class="blue">Dict</span>.toList school)<br>
+        </div>
+      </div>
+  
+  <div class="code-sample-14 code-sample">
+        <div class="code-sample-menu">
+         Grains
+          <a href="https://exercism.io/tracks/elm/exercises/grains/solutions/d9c29fd117a144988c0a2543246c727c" target="_blank">
+          <span class="code-sample-expand">
+              <i class="fas fa-expand"></i>
+            </span>
+          </a>
+          <a href="https://github.com/wintersoil/Elm/blob/main/Grains.elm" target="_blank">
+          <span class="code-sample-github">
+            <i class="fab fa-github"></i>
+          </span>
+          </a>
+        </div>
+        <div class="code-sample-code">
+        
+          <span class="golden">module</span> <span class="blue">Grains</span> <span class="golden">exposing</span> (<span class="pink">square</span>)<br><br>
+
+          <span class="pink">doublePrevious</span> : <span class="golden">Int -> Int -> Int -> Maybe Int</span><br>
+          <span class="pink">doublePrevious</span> ptr sum n=<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="golden">if</span> (n &lt;= <span class="blue">0</span> || n &gt; <span class="blue">64</span>) <span class="golden">then</span><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">Nothing</span><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="golden">else if</span>(ptr &lt; n) <span class="golden">then</span><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doublePrevious (ptr <span class="golden">+</span> <span class="blue">1</span>) (sum <span class="golden">*</span> <span class="blue">2</span>) n<br>
+&nbsp;&nbsp;&nbsp;&nbsp;else<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">Just</span> sum<br><br>
+
+          <span class="pink">square</span> : <span class="golden">Int -> Maybe Int</span><br>
+          <span class="pink">square</span> n =<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;doublePrevious <span class="blue">1 1</span> n<br>
+
+        </div>
+      </div>
+  
+  <div class="code-sample-15 code-sample">
+        <div class="code-sample-menu">
+         Hamming
+          <a href="https://exercism.io/tracks/elm/exercises/hamming/solutions/5c1ac6243e8440ccaf3fc84b1f26d78d" target="_blank">
+          <span class="code-sample-expand">
+              <i class="fas fa-expand"></i>
+            </span>
+          </a>
+          <a href="https://github.com/wintersoil/Elm/blob/main/Hamming.elm" target="_blank">
+          <span class="code-sample-github">
+            <i class="fab fa-github"></i>
+          </span>
+          </a>
+        </div>
+        <div class="code-sample-code">
+        
+          <span class="golden">module</span> <span class="blue">Hamming</span> <span class="golden">exposing</span> (<span class="pink">distance</span>)<br><br>
+
+          <span class="pink">compareToOther</span> : <span class="golden">List Char -> Int -> List Char -> Result String Int</span><br>
+          <span class="pink">compareToOther</span> right count left=<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="golden">if</span> ((<span class="blue">List</span>.length right) <span class="golden">==</span> (<span class="blue">List</span>.length left) <span class="golden">&&</span> <span class="blue">List</span>.length right <span class="golden">>=</span> <span class="blue">1</span> <span class="golden">&&</span> ((<span class="blue">List</span>.head left) <span class="golden">==</span> (<span class="blue">List</span>.head right)) <span class="golden">==</span> <span class="blue">False</span>) then<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;compareToOther (<span class="blue">List</span>.drop <span class="blue">1</span> (right)) (count <span class="golden">+</span> <span class="blue">1</span>) (<span class="blue">List</span>.drop <span class="blue">1</span> (left))<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="golden">else if</span> ((<span class="blue">List</span>.length right) <span class="golden">==</span> (<span class="blue">List</span>.length left) <span class="golden">&&</span> <span class="blue">List</span>.length right <span class="golden">>=</span> <span class="blue">1</span> <span class="golden">&&</span> (<span class="blue">List</span>.head left) <span class="golden">==</span> (<span class="blue">List</span>.head right))  <span class="golden">then</span><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;compareToOther (<span class="blue">List</span>.drop <span class="blue">1</span> (right)) (count) (<span class="blue">List</span>.drop <span class="blue">1</span> (left))<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="golden">else if</span>(((<span class="blue">List</span>.length right) <span class="golden">==</span> (<span class="blue">List</span>.length left)) <span class="golden">==</span> <span class="blue">False</span>) <span class="golden">then</span><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">Result.Err</span> "left and right strands must be of equal length"<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="golden">else</span><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">Result.Ok</span> count<br><br>
+
+          <span class="pink">distance</span> : <span class="golden">String -> String -> Result String Int</span><br>
+          <span class="pink">distance</span> left right =<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;compareToOther (<span class="blue">String</span>.toList right) <span class="blue">0</span> (<span class="blue">String</span>.toList left)<br>
+
+        </div>
+      </div>
+  
+  <div class="code-sample-16 code-sample">
+        <div class="code-sample-menu">
+         Nucleotide Count
+          <a href="https://exercism.io/tracks/elm/exercises/nucleotide-count/solutions/8fb61264b2c549328c2b7d8cee9d4692" target="_blank">
+          <span class="code-sample-expand">
+              <i class="fas fa-expand"></i>
+            </span>
+          </a>
+          <a href="https://github.com/wintersoil/Elm/blob/main/NucleotideCount.elm" target="_blank">
+          <span class="code-sample-github">
+            <i class="fab fa-github"></i>
+          </span>
+          </a>
+        </div>
+        <div class="code-sample-code">
+        
+          <span class="golden">module</span> <span class="blue">NucleotideCount</span> <span class="golden">exposing</span> (<span class="pink">nucleotideCounts</span>)<br><br>
+
+
+          <span class="golden">type alias</span> <span class="blue">NucleotideCounts</span> =<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;{ a : <span class="blue">Int</span><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;, t : <span class="blue">Int</span><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;, c : <span class="blue">Int</span><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;, g : <span class="blue">Int</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+          <span class="pink">fillDict</span> : <span class="golden">NucleotideCounts -> Char -> NucleotideCounts</span><br>
+          <span class="pink">fillDict</span> nc ch=<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="golden">if</span> (<span class="blue">Char</span>.toLower ch <span class="golden">==</span> 'a') <span class="golden">then</span><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">NucleotideCounts</span> ((nc.a) + <span class="blue">1</span>) nc.t nc.c nc.g<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="golden">else if</span> (<span class="blue">Char</span>.toLower ch <span class="golden">==</span> 't') <span class="golden">then</span><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">NucleotideCounts</span> nc.a ((nc.t) +1) nc.c nc.g<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="golden">else if</span>(<span class="blue">Char</span>.toLower ch <span class="golden">==</span> 'c') <span class="golden">then</span><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">NucleotideCounts</span> nc.a nc.t ((nc.c) + 1) nc.g<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="golden">else if</span> (<span class="blue">Char</span>.toLower ch <span class="golden">==</span> 'g') <span class="golden">then</span><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">NucleotideCounts</span> nc.a nc.t nc.c ((nc.g) + 1)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="golden">else</span><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">NucleotideCounts</span> nc.a nc.t nc.c nc.g<br><br>
+
+          <span class="pink">recursiveInsert</span> : <span class="golden">NucleotideCounts -> String -> NucleotideCounts</span><br>
+          <span class="pink">recursiveInsert</span> nc sequence=<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="golden">if</span> (<span class="blue">String</span>.length sequence > <span class="blue">0</span>) <span class="golden">then</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;recursiveInsert (fillDict nc (<span class="blue">Maybe</span>.withDefault 'z' (<span class="blue">List</span>.head (<span class="blue">String</span>.toList sequence)))) (<span class="blue">String</span>.fromList (<span class="blue">List</span>.drop <span class="blue">1</span> (<span class="blue">String</span>.toList sequence)))<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="golden">else</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nc<br><br>
+
+          <span class="pink">nucleotideCounts</span> : <span class="golden">String -> NucleotideCounts</span><br>
+          <span class="pink">nucleotideCounts</span> sequence =<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;recursiveInsert (<span class="blue">NucleotideCounts 0 0 0 0</span>) sequence<br>
+
+        </div>
+      </div>
+  
+  <div class="code-sample-17 code-sample">
+        <div class="code-sample-menu">
+         Pangram
+          <a href="https://exercism.io/tracks/elm/exercises/pangram/solutions/8e0ec48d3abf47a1b46da658d78228a2" target="_blank">
+          <span class="code-sample-expand">
+              <i class="fas fa-expand"></i>
+            </span>
+          </a>
+          <a href="https://github.com/wintersoil/Elm/blob/main/Pangram.elm" target="_blank">
+          <span class="code-sample-github">
+            <i class="fab fa-github"></i>
+          </span>
+          </a>
+        </div>
+        <div class="code-sample-code">
+        
+<span class="golden">module</span> <span class="blue">Pangram</span> <span class="golden">exposing</span> (<span class="pink">isPangram</span>)<br>
+          <span class="golden">import</span> <span class="blue">Dict</span> <span class="golden">exposing</span> (<span class="golden">Dict</span>)<br>
+          <span class="golden">import</span> <span class="blue">Set</span><br><br>
+
+          <span class="pink">placeInDict</span>: <span class="golden">Char -> Dict Char Int -> Dict Char Int</span><br>
+          <span class="pink">placeInDict</span> ch dt=<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">Dict</span>.insert ch (<span class="blue">Maybe</span>.withDefault 1 (<span class="blue">Dict</span>.get ch dt)) dt<br><br>
+
+          <span class="pink">verifyAllAlphabets</span>: <span class="golden">Dict Char Int -> Bool</span><br>
+          <span class="pink">verifyAllAlphabets</span> dt=<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">List</span>.length (<span class="blue">Set</span>.toList ( <span class="blue">Set</span>.fromList (<span class="blue">List</span>.filter <span class="blue">Char</span>.isAlpha (<span class="blue">List</span>.map <span class="blue">Char</span>.toLower (<span class="blue">Dict</span>.keys dt))))) == <span class="blue">26</span><br><br>
+
+          <span class="pink">fillDict</span> : <span class="golden">List Char -> Dict Char Int -> Bool</span><br>
+          <span class="pink">fillDict</span> chs dt=<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;if(<span class="blue">List</span>.length chs <span class="golden">==</span> <span class="blue">0</span>) <span class="golden">then</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;verifyAllAlphabets (dt)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="golden">else</span><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fillDict (<span class="blue">List</span>.drop <span class="blue">1</span> chs) ( placeInDict (<span class="blue">Maybe</span>.withDefault '.' (<span class="blue">List</span>.head chs)) dt)<br><br>
+
+          <span class="pink">isPangram</span> : <span class="golden">String -> Bool</span><br>
+          <span class="pink">isPangram</span> sentence =<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;fillDict ( <span class="blue">String</span>.toList sentence ) <span class="blue">Dict</span>.empty<br>
+
+        </div>
+      </div>
+  
+  <div class="code-sample-18 code-sample">
+        <div class="code-sample-menu">
+         Raindrops
+          <a href="https://exercism.io/tracks/elm/exercises/raindrops/solutions/67c47af14db34c8488318058abdab6c6" target="_blank">
+          <span class="code-sample-expand">
+              <i class="fas fa-expand"></i>
+            </span>
+          </a>
+          <a href="https://github.com/wintersoil/Elm/blob/main/Raindrops.elm" target="_blank">
+          <span class="code-sample-github">
+            <i class="fab fa-github"></i>
+          </span>
+          </a>
+        </div>
+        <div class="code-sample-code">
+        
+          <span class="golden">module</span> <span class="blue">Raindrops</span> <span class="golden">exposing</span> (<span class="pink">raindrops</span>)<br><br>
+
+          <span class="pink">addPlong</span> : <span class="golden">String -> String</span><br>
+          <span class="pink">addPlong</span> s1 =<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">String</span>.append s1 "Plong"<br><br>
+
+  <span class="pink">checkSeven</span> : <span class="golden">Int -> String -> String</span><br>
+  <span class="pink">checkSeven</span> number result=<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="golden">if</span> (modBy <span class="blue">7</span> number == <span class="blue">0</span>) <span class="golden">then</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;addPlong result<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="golden">else</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result<br><br>
+
+
+  <span class="pink">addPlang</span> : <span class="golden">String -> String</span><br>
+  <span class="pink">addPlang</span> s1 =<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">String</span>.append s1 "Plang"<br><br>
+
+  <span class="pink">checkFive</span> : <span class="golden">Int -> String -> String</span><br>
+  <span class="pink">checkFive</span> number result=<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;if(modBy <span class="blue">5</span> number == <span class="blue">0</span>) <span class="golden">then</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;addPlang result<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="golden">else</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result<br><br>
+
+
+  <span class="pink">addPling</span> : <span class="golden">String -> String</span><br>
+  <span class="pink">addPling</span> s1 =<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">String</span>.append s1 "Pling"<br><br>
+
+  <span class="pink">checkThree</span> : <span class="golden">Int -> String -> String</span><br>
+  <span class="pink">checkThree</span> number result=<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="golden">if</span> (modBy <span class="blue">3</span> number == <span class="blue">0</span>) <span class="golden">then</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;addPling result<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="golden">else</span><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result<br><br>
+
+  <span class="pink">addNumber</span> : <span class="golden">String -> Int -> String</span><br>
+  <span class="pink">addNumber</span> s1 i1 =<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">String</span>.append (<span class="blue">String</span>.fromInt i1) s1<br><br>
+
+  <span class="pink">raindrops</span> : <span class="golden">Int -> String</span><br>
+  <span class="pink">raindrops</span> number =<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="golden">if</span> (<span class="blue">String</span>.length (checkSeven number (checkFive number (checkThree number ""))) > <span class="blue">0</span> ) <span class="golden">then</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;checkSeven number (checkFive number (checkThree number ""))<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="golden">else</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;addNumber "" number<br>
+
+        </div>
+      </div>
+  
+    </div>
+    
+    
+  </body>
+</html>
