@@ -19,3 +19,4 @@ isArmstrongNumber nb =
     else
         False
         
+-- https://exercism.io/tracks/elm/exercises/armstrong-numbers/solutions/52cf7bf6aa1b4e20bbb40846fc94128b
