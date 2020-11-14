@@ -2,12 +2,10 @@ module Triangle exposing (rows)
 
 reducer1 : List Int -> Int
 reducer1 l1 =
-    if (List.length l1 == 0) then
-        -14
-    else if (List.length l1 > 1) then
+    if (List.length l1 > 1) then
         (Maybe.withDefault -3 (List.head l1) + Maybe.withDefault -3 (List.head (List.drop 1 l1)))
     else
-        -7
+        -12
 
 
 fillAList : Int -> List Int -> List Int -> List Int -> Int -> Int -> Int -> List Int
